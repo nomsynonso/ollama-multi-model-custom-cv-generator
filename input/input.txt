@@ -1,0 +1,45 @@
+About the job
+Lead Cloud Infrastructure Engineer / Manager (Azure AZ-104) Epsom / WFH to £80k
+
+
+
+Are you a highly skilled Azure Cloud Engineer looking for an opportunity to progress your career in a senior, hands-on role with leadership responsibilities?
+
+
+You could be joining a small financial services company that specialise in savings and mortgages, in a friendly and supportive environment where you can work with autonomy and enjoy flexible working.
+
+
+What's in it for you: 
+
+Up to £80k salary
+Pension (up to 10% contribution)
+25 days holiday
+Private Healthcare
+Life Assurance
+Company bonus
+Professional study support
+
+
+Your role:
+
+As the Lead Cloud Infrastructure Engineer you'll provide hands-on technical / team leadership to small team responsible for the deployment and configuration of cloud services and the ongoing maintenance of Azure cloud services as the business transitions to the cloud. You'll produce configuration design documentation (LLD) for proposed solutions and be responsible for Azure tenancy administration and the implementation of cloud security infrastructure.
+
+
+Location / WFH:
+
+You can work from home most of the time, meeting up with colleagues in the Epsom office twice a month.
+
+
+About you:
+
+You are a skilled Azure Cloud Engineer with a Windows infrastructure background, Azure tenancy administration experience and AZ-104 certification
+You have experience with low level cloud design and solution architecture
+You're collaborative and pragmatic with technical / team leadership skills and experience, including scheduling and allocating work as well as mentoring
+You have experience with back-up strategy alignment, monitoring, escalation, resolution and MI
+You have experience of maintaining infrastructure diagrams
+You have a strong understanding of PasS and IaaS
+You have experience of working in SME's with small Azure estates i.e. 3 subscriptions
+You're proactive and enthusiastic, keen to make an impact and comfortable with senior stakeholders
+
+
+Apply now to find out more about this Lead Cloud Infrastructure Engineer (Azure AZ-104) role.
