@@ -40,31 +40,31 @@ jobs:
       - name: Build skill-gap analysis prompt
         run: |
           cat > workspace/skill_gap_prompt.txt << 'EOF'
-You are an expert technical recruiter and career coach.
+              You are an expert technical recruiter and career coach.
 
-### JOB DESCRIPTION
-EOF
-          cat input/input.txt >> workspace/skill_gap_prompt.txt
-          cat >> workspace/skill_gap_prompt.txt << 'EOF'
+              ### JOB DESCRIPTION
+              EOF
+                    cat input/input.txt >> workspace/skill_gap_prompt.txt
+                    cat >> workspace/skill_gap_prompt.txt << 'EOF'
 
-### CANDIDATE CV (TEXT)
-EOF
-          cat workspace/cv_clean.txt >> workspace/skill_gap_prompt.txt
-          cat >> workspace/skill_gap_prompt.txt << 'EOF'
+              ### CANDIDATE CV (TEXT)
+              EOF
+                    cat workspace/cv_clean.txt >> workspace/skill_gap_prompt.txt
+                    cat >> workspace/skill_gap_prompt.txt << 'EOF'
 
-### TASK
-1. Extract all required skills and technologies from the job description.
-2. Extract all skills and technologies present in the CV.
-3. Identify which required skills are missing or weakly represented.
-4. Provide a concise "Skill Gap Analysis" in Markdown with the following sections:
+              ### TASK
+              1. Extract all required skills and technologies from the job description.
+              2. Extract all skills and technologies present in the CV.
+              3. Identify which required skills are missing or weakly represented.
+              4. Provide a concise "Skill Gap Analysis" in Markdown with the following sections:
 
-- Required Skills
-- Present Skills
-- Missing or Weak Skills
-- Recommendations
+              - Required Skills
+              - Present Skills
+              - Missing or Weak Skills
+              - Recommendations
 
-Output ONLY valid Markdown. Do not include any other commentary.
-EOF
+              Output ONLY valid Markdown. Do not include any other commentary.
+              EOF
 
       - name: Run skill-gap analysis with ${{ env.MODEL_NAME }}
         run: |
@@ -73,27 +73,27 @@ EOF
       - name: Build CV generation prompt
         run: |
           cat > workspace/cv_prompt.txt << 'EOF'
-You are an expert CV writer for senior Cloud & DevOps roles.
+              You are an expert CV writer for senior Cloud & DevOps roles.
 
-### JOB DESCRIPTION
-EOF
-          cat input/input.txt >> workspace/cv_prompt.txt
-          cat >> workspace/cv_prompt.txt << 'EOF'
+              ### JOB DESCRIPTION
+              EOF
+                        cat input/input.txt >> workspace/cv_prompt.txt
+                        cat >> workspace/cv_prompt.txt << 'EOF'
 
-### EXISTING CV (TEXT)
-EOF
-          cat workspace/cv_clean.txt >> workspace/cv_prompt.txt
-          cat >> workspace/cv_prompt.txt << 'EOF'
+              ### EXISTING CV (TEXT)
+              EOF
+                        cat workspace/cv_clean.txt >> workspace/cv_prompt.txt
+                        cat >> workspace/cv_prompt.txt << 'EOF'
 
-### TASK
-Rewrite the CV so that it is strongly aligned with the job description while remaining truthful to the candidate's experience.
+              ### TASK
+              Rewrite the CV so that it is strongly aligned with the job description while remaining truthful to the candidate's experience.
 
-Requirements:
-- Output a modern, ATS-friendly CV in **Markdown**.
-- Use clear section headings such as: Summary, Skills, Experience, Education, Certifications, Projects.
-- Emphasise Azure, DevOps, Kubernetes, Terraform, CI/CD, and platform engineering where appropriate.
-- Do NOT include any explanation or commentary—ONLY the final CV in Markdown.
-EOF
+              Requirements:
+              - Output a modern, ATS-friendly CV in **Markdown**.
+              - Use clear section headings such as: Summary, Skills, Experience, Education, Certifications, Projects.
+              - Emphasise Azure, DevOps, Kubernetes, Terraform, CI/CD, and platform engineering where appropriate.
+              - Do NOT include any explanation or commentary—ONLY the final CV in Markdown.
+              EOF
 
       - name: Generate customised CV (Markdown) with ${{ env.MODEL_NAME }}
         run: |
@@ -102,29 +102,29 @@ EOF
       - name: Build cover letter prompt
         run: |
           cat > workspace/cover_letter_prompt.txt << 'EOF'
-You are an expert in writing concise, high-impact cover letters for senior Cloud & DevOps roles.
+              You are an expert in writing concise, high-impact cover letters for senior Cloud & DevOps roles.
 
-### JOB DESCRIPTION
-EOF
-          cat input/input.txt >> workspace/cover_letter_prompt.txt
-          cat >> workspace/cover_letter_prompt.txt << 'EOF'
+              ### JOB DESCRIPTION
+              EOF
+                        cat input/input.txt >> workspace/cover_letter_prompt.txt
+                        cat >> workspace/cover_letter_prompt.txt << 'EOF'
 
-### CANDIDATE CV (TEXT)
-EOF
-          cat workspace/cv_clean.txt >> workspace/cover_letter_prompt.txt
-          cat >> workspace/cover_letter_prompt.txt << 'EOF'
+              ### CANDIDATE CV (TEXT)
+              EOF
+                        cat workspace/cv_clean.txt >> workspace/cover_letter_prompt.txt
+                        cat >> workspace/cover_letter_prompt.txt << 'EOF'
 
-### TASK
-Write a tailored cover letter for this role.
+              ### TASK
+              Write a tailored cover letter for this role.
 
-Requirements:
-- Address the letter generically (e.g., "Dear Hiring Manager").
-- 3–5 short paragraphs.
-- Clearly connect the candidate's experience to the job requirements.
-- Highlight Azure, DevOps, Kubernetes, Terraform, CI/CD, and platform engineering where relevant.
-- Confident but not arrogant tone.
-- Output ONLY the cover letter in **Markdown**.
-EOF
+              Requirements:
+              - Address the letter generically (e.g., "Dear Hiring Manager").
+              - 3–5 short paragraphs.
+              - Clearly connect the candidate's experience to the job requirements.
+              - Highlight Azure, DevOps, Kubernetes, Terraform, CI/CD, and platform engineering where relevant.
+              - Confident but not arrogant tone.
+              - Output ONLY the cover letter in **Markdown**.
+              EOF
 
       - name: Generate cover letter (Markdown) with ${{ env.MODEL_NAME }}
         run: |
