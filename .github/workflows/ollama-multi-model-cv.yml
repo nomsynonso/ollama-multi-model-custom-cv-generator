@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies (Ollama, Pandoc, LaTeX, pdftotext)
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-latex-base poppler-utils
+          sudo apt-get install -y pandoc texlive-full poppler-utils
           curl -fsSL https://ollama.com/install.sh | sh
           sudo systemctl start ollama
 
