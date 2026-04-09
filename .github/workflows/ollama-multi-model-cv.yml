@@ -132,15 +132,11 @@ jobs:
 
       - name: Convert Markdown CV and cover letter to PDF
         run: |
-          mkdir -p workspace/pdf
+         mkdir -p workspace/pdf
 
-          # Clean Markdown files
-          sed -i 's/\x1b
-
-          \[[0-9;]*[A-Za-z]//g' workspace/cv_${MODEL_NAME}.md
-          sed -i 's/\x1b
-
-          \[[0-9;]*[A-Za-z]//g' workspace/cover_letter_${MODEL_NAME}.md
+          # Clean Markdown files (Removed literal newlines in sed commands)
+          sed -i 's/\x1b\[[0-9;]*[A-Za-z]//g' workspace/cv_${MODEL_NAME}.md
+          sed -i 's/\x1b\[[0-9;]*[A-Za-z]//g' workspace/cover_letter_${MODEL_NAME}.md
 
           tr -cd '\11\12\15\40-\176' < workspace/cv_${MODEL_NAME}.md > workspace/cv_${MODEL_NAME}_clean.md
           tr -cd '\11\12\15\40-\176' < workspace/cover_letter_${MODEL_NAME}.md > workspace/cover_letter_${MODEL_NAME}_clean.md
@@ -150,7 +146,7 @@ jobs:
 
           # Convert to PDF
           pandoc workspace/cv_${MODEL_NAME}.md -o workspace/pdf/cv_${MODEL_NAME}.pdf --pdf-engine=xelatex
-          pandoc workspace/cover_letter_${MODEL_NAME}.md -o workspace/pdf/cover_letter_${MODEL_NAME}.pdf --pdf-engine=xelatex
+          pandoc workspace/cover_letter_${MODEL_NAME}.md -o workspace/pdf/cover_letter_${MODEL_NAME}.pdf --pdf-engine=xelatex 
 
       - name: Upload artifacts for model ${{ env.MODEL_NAME }}
         uses: actions/upload-artifact@v4
