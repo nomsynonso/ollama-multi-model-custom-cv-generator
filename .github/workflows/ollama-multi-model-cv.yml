@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        model: [llama3, mistral, phi3, gemma4]
+        model: [llama3, mistral, phi3, gemma4:e4b]
 
     env:
       MODEL_NAME: ${{ matrix.model }}
