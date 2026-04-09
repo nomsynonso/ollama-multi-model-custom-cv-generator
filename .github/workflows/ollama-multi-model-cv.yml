@@ -135,12 +135,12 @@ jobs:
           mkdir -p workspace/pdf
 
           # Clean Markdown files
-          sed -i $'s/\x1b
+          sed -i 's/\x1b
 
-          \[[0-9;]*m//g' workspace/cv_${MODEL_NAME}.md
-          sed -i $'s/\x1b
+          \[[0-9;]*[A-Za-z]//g' workspace/cv_${MODEL_NAME}.md
+          sed -i 's/\x1b
 
-          \[[0-9;]*m//g' workspace/cover_letter_${MODEL_NAME}.md
+          \[[0-9;]*[A-Za-z]//g' workspace/cover_letter_${MODEL_NAME}.md
 
           tr -cd '\11\12\15\40-\176' < workspace/cv_${MODEL_NAME}.md > workspace/cv_${MODEL_NAME}_clean.md
           tr -cd '\11\12\15\40-\176' < workspace/cover_letter_${MODEL_NAME}.md > workspace/cover_letter_${MODEL_NAME}_clean.md
