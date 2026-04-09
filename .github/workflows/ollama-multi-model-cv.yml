@@ -135,10 +135,10 @@ jobs:
           mkdir -p workspace/pdf
 
           # Clean Markdown files
-          sed -i 's/\x1b
+          sed -i $'s/\x1b
 
           \[[0-9;]*m//g' workspace/cv_${MODEL_NAME}.md
-          sed -i 's/\x1b
+          sed -i $'s/\x1b
 
           \[[0-9;]*m//g' workspace/cover_letter_${MODEL_NAME}.md
 
@@ -149,8 +149,8 @@ jobs:
           mv workspace/cover_letter_${MODEL_NAME}_clean.md workspace/cover_letter_${MODEL_NAME}.md
 
           # Convert to PDF
-          pandoc workspace/cv_${MODEL_NAME}.md -o workspace/pdf/cv_${MODEL_NAME}.pdf
-          pandoc workspace/cover_letter_${MODEL_NAME}.md -o workspace/pdf/cover_letter_${MODEL_NAME}.pdf
+          pandoc workspace/cv_${MODEL_NAME}.md -o workspace/pdf/cv_${MODEL_NAME}.pdf --pdf-engine=xelatex
+          pandoc workspace/cover_letter_${MODEL_NAME}.md -o workspace/pdf/cover_letter_${MODEL_NAME}.pdf --pdf-engine=xelatex
 
       - name: Upload artifacts for model ${{ env.MODEL_NAME }}
         uses: actions/upload-artifact@v4
